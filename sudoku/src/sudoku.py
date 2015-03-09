@@ -36,7 +36,6 @@ class SudokuGenerator(object):
 
     """transposes the sudoku board while still retaining validity"""
     def transpose_board(self, board):
-        # transposed = numpy.array(zip(*board))
         transposed = zip(*board)
         return map(list, transposed)
 
