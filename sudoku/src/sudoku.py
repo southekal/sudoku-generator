@@ -1,6 +1,5 @@
 import random
 import copy
-import numpy
 import sys
 import ConfigParser
 
@@ -37,8 +36,9 @@ class SudokuGenerator(object):
 
     """transposes the sudoku board while still retaining validity"""
     def transpose_board(self, board):
-        transposed = numpy.array(zip(*board))
-        return transposed
+        # transposed = numpy.array(zip(*board))
+        transposed = zip(*board)
+        return map(list, transposed)
 
     """switches mid-section of the sudoku board with the last section while still retaining"""
     """retaining validity"""

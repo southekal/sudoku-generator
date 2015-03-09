@@ -18,14 +18,12 @@
 
 ## Installation
 * git clone https://github.com/southekal/sudoku-generator.git
-* Run pip install -U pip
-* Run pip -r requirements.txt
 
 ## Running and Generation
-* From the home directory - run python src/sudoku.py [easy | intermediate | difficult]
+* From the home directory run - python sudoku/src/sudoku.py [easy | intermediate | difficult]
 
 ## Tests
-* From the home directory - run python src/test.py
+* From the home directory run - python -m unittest discover --pattern 'test.py'  --verbose
 
 
 
