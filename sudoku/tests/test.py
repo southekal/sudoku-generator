@@ -124,13 +124,16 @@ class TestSudokuGenerator(unittest.TestCase):
                     elem_holder.append(elem)
         self.assertEqual(self.difficult, len(elem_holder), '[ERROR]: [DIFFICULT] - number of empty cells do not match')
 
+    """asserts for TypeError if no difficulty parameters are provided"""
     def test_empty_difficulty_parameter(self):
         with self.assertRaises(TypeError):
             SudokuGenerator().remove_cells(self.sudoku_full_board, None)
 
+    """asserts for data if difficulty parameters are provided"""
     def test_passing_difficulty_parameter(self):
         self.assertIsNotNone(SudokuGenerator().remove_cells(self.sudoku_full_board, 25), '[ERROR]: Data is missing even when parameter is provided')
 
+    """asserts for TypeError if more than one diffculty parameter is provided"""
     def test_additional_difficulty_parameter(self):
         with self.assertRaises(TypeError):
             SudokuGenerator().remove_cells(self.sudoku_full_board, None, 25)
