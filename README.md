@@ -20,11 +20,11 @@
 * git clone https://github.com/southekal/sudoku-generator.git
 
 ## Running and Generation
-* From the home directory run:
+* From the home directory "sudoku-generator" run:
 * python sudoku/src/sudoku.py [easy | intermediate | difficult]
 
 ## Tests
-* From the home directory run:
+* From the home directory "sudoku-generator" run:
 * python -m unittest discover --pattern 'test.py'  --verbose
 
 
