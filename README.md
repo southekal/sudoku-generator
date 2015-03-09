@@ -27,6 +27,8 @@
 * From the home directory "sudoku-generator" run:
 * python -m unittest discover --pattern 'test.py'  --verbose
 
+## Future Enhancements
+* Removal of cells that verifies that the removed cell can still be solved by looking at the remaining cells.
 
 
 
