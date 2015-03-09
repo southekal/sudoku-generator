@@ -20,7 +20,7 @@ class TestSudokuGenerator(unittest.TestCase):
         self.intermediate = int(config.get('Difficulty', 'intermediate'))
         self.difficult = int(config.get('Difficulty', 'difficult'))
 
-    """checks for 81 cells in  a 9*9 sudoku grid"""
+    """checks for eg: 81 cells in  a 9*9 sudoku grid"""
     def test_cell_count(self):
         cell_count_holder = []
         for elems in self.sudoku_full_board:
@@ -28,7 +28,7 @@ class TestSudokuGenerator(unittest.TestCase):
                 cell_count_holder.append(elem)
         self.assertEqual(self.grid * self.grid, len(cell_count_holder), '[ERROR]: Total number of cells does not equal {0}'.format(self.grid * self.grid))
 
-    """checks for numbers between 1-9 in a 9*9 sudoku grid"""
+    """checks for eg: numbers between 1-9 in a 9*9 sudoku grid"""
     def test_numbers_generated(self):
         number_holder = []
         for elems in self.sudoku_full_board:
@@ -37,16 +37,16 @@ class TestSudokuGenerator(unittest.TestCase):
         number_holder.sort()
         self.assertEqual(list(set(number_holder)), range(1, self.grid+1), '[ERROR]: Numbers do not lie between 1 and {0}'.format(self.grid))
 
-    """checks for 9 rows in a 9*9 sudoku grid"""
+    """checks for eg: 9 rows in a 9*9 sudoku grid"""
     def test_row_count(self):
         self.assertEqual(self.grid, len(self.sudoku_full_board), '[ERROR]: Number of rows does not equal {0}'.format(self.grid))
 
-    """checks for 9 columns in a 9*9 sudoku grid"""
+    """checks for eg: 9 columns in a 9*9 sudoku grid"""
     def test_col_count(self):
         sudoku_full_board_transposed = zip(*self.sudoku_full_board)
         self.assertEqual(self.grid, len(sudoku_full_board_transposed), '[ERROR]: Number of rows does not equal {0}'.format(self.grid))
 
-    """checks for sum of a row = 45 in a 9*9 sudoku grid (checks for duplicates or out of range numbers)"""
+    """checks for eg: sum of a row = 45 in a 9*9 sudoku grid (checks for duplicates or out of range numbers)"""
     def test_row_sum(self):
         for rows in self.sudoku_full_board:
             row_holder = []
@@ -54,7 +54,7 @@ class TestSudokuGenerator(unittest.TestCase):
                 row_holder.append(row)
             self.assertEqual(sum(range(1, self.grid + 1)), sum(row_holder), '[ERROR]: Sum of rows does not equal {0}'.format(sum(range(1, self.grid + 1))))
 
-    """checks for sum of a column = 45 in a 9*9 sudoku grid (checks for duplicates or out of range numbers)"""
+    """checks for eg: sum of a column = 45 in a 9*9 sudoku grid (checks for duplicates or out of range numbers)"""
     def test_col_sum(self):
         sudoku_full_board_transposed = zip(*self.sudoku_full_board)
         for cols in sudoku_full_board_transposed:
@@ -80,7 +80,7 @@ class TestSudokuGenerator(unittest.TestCase):
                 col_holder.append(col)
             self.assertEqual(len(set(col_holder)), len(col_holder), '[ERROR]: There are duplicates in a column')
 
-    """checks for duplicates in a block (3*3 grid)"""
+    """checks for duplicates in a block eg: (3*3 grid)"""
     def test_block_dup(self):
         a = self.sudoku_full_board
         block_holder = []
